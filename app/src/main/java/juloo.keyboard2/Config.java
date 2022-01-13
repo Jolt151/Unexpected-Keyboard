@@ -7,6 +7,8 @@ import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
+import juloo.keyboard2.R;
+
 final class Config
 {
   // From resources

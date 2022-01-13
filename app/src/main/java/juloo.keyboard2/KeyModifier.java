@@ -2,7 +2,7 @@ package juloo.keyboard2;
 
 import android.util.SparseArray;
 import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
+
 import java.util.HashMap;
 
 class KeyModifier

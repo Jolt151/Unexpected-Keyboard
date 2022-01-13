@@ -12,7 +12,7 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.PopupWindow;
+
 import java.util.ArrayList;
 
 public class Keyboard2View extends View

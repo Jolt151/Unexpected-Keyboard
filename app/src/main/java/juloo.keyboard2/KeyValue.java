@@ -1,6 +1,5 @@
 package juloo.keyboard2;
 
-import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import java.util.HashMap;
 

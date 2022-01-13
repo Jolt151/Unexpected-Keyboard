@@ -3,7 +3,6 @@ package juloo.keyboard2;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 public class EmojiGroupButtonsBar extends LinearLayout
 {

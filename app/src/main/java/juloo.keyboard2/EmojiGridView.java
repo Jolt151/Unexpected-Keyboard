@@ -2,7 +2,6 @@ package juloo.keyboard2;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.Gravity;
