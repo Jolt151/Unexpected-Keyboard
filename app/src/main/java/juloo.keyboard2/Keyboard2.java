@@ -67,7 +67,7 @@ public class Keyboard2 extends InputMethodService
 
   private void refreshSubtypeLayout(InputMethodSubtype subtype)
   {
-    int l = _config.layout;;
+    int l = _config.layout;
     if (l == -1)
     {
       String s = subtype.getExtraValueOf("default_layout");
