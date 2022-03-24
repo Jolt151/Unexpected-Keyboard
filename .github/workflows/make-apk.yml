@@ -9,37 +9,24 @@ jobs:
   Make-apk:
     runs-on: ubuntu-latest
     steps:
-    - name: Install nix
-      uses: cachix/install-nix-action@v15
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-    - name: Setup nixbuild.net
-      uses: nixbuild/nixbuild-action@v9
-      with:
-        nixbuild_ssh_key: ${{ secrets.nixbuild_ssh_key }}
     - name: Checkout repo
       uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu' # See 'Supported distributions' for available options
+        java-version: '11'
     - name: Cache debug certificate
       uses: actions/cache@v2
       with:
         path: _build/debug.keystore
         key: debug-keystore
     # Hopefully cached.
-    - name: Debug certificate
-      run: |
-        [[ -f _build/debug.keystore ]] ||
-        nix-shell ./shell.nix --run 'make debug.keystore'
+#    - name: Debug certificate
+#      run: |
+#        [[ -f _build/debug.keystore ]] ||
+#        nix-shell ./shell.nix --run 'make debug.keystore'
     - name: Build
-      run: |
-        store=ssh-ng://eu.nixbuild.net
-        result=$(
-          nix build --json --eval-store auto --store $store \
-            -f ./shell.nix debug-apk \
-          | jq -r '.[0].outputs.out'
-        )
-        nix copy --from $store $result
-        mkdir -p _build
-        cp $result/*.apk _build
+      run: make
     - name: Save debug apk
       uses: actions/upload-artifact@v2
       with:
