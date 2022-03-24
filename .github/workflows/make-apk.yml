@@ -15,6 +15,8 @@ jobs:
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '11'
+    - name: Install fontforge
+      run: sudo apt-get install -y fontforge
     - name: Cache debug certificate
       uses: actions/cache@v2
       with:
